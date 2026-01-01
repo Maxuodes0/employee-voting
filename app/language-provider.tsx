@@ -14,7 +14,7 @@ const LanguageContext = createContext<LanguageContextValue | null>(null);
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguage] = useState<Language>("ar");
-  const direction = language === "ar" ? "rtl" : "ltr";
+  const direction: "rtl" | "ltr" = language === "ar" ? "rtl" : "ltr";
 
   useEffect(() => {
     document.documentElement.lang = language === "ar" ? "ar" : "en";
